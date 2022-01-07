@@ -6,11 +6,11 @@
 </div>
 
 <div class="col-lg-8">
-    <form method="post" action="/dashboard/posts">
+    <form method="post" action="/dashboard/posts" class="mb-5">
         @csrf
     <div class="mb-3">
       <label for="title" class="form-label">Title</label>
-      <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title">
+      <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" autofocus value="{{ old('title') }}">
       @error('title')
         <div class="invalid-feedback">
             {{ $message }}
@@ -19,7 +19,7 @@
     </div>
     <div class="mb-3">
       <label for="slug" class="form-label">Slug</label>
-      <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug">
+      <input type="text" class="form-control @error('slug') is-invalid @enderror" id="slug" name="slug" value="{{ old('slug') }}">
       @error('slug')
         <div class="invalid-feedback">
             {{ $message }}
@@ -30,15 +30,21 @@
       <label for="category" class="form-label">Category</label>
       <select class="form-select" name="category_id">
           @foreach ($categories as $c)
+          @if(old('category_id') == $c->id)
+          <option value="{{ $c->id }}" selected>{{ $c->name }}</option>
+          @else
           <option value="{{ $c->id }}">{{ $c->name }}</option>
+          @endif
           @endforeach
 
       </select>
     </div>
     <div class="mb-3">
       <label for="body" class="form-label">Body</label>
-        <p>{{ $message }}</p>
-        <input id="body" type="hidden" name="body">
+      @error('body')
+        <p class="text-danger">{{ $message }}</p>
+        @enderror
+        <input id="body" type="hidden" name="body" value="{{ old('body') }}">
         <trix-editor input="body"></trix-editor>
     </div>
 

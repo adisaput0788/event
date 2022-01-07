@@ -4,7 +4,15 @@
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
     <h1 class="h2">My Posts</h1>
 </div>
-<div class="table-responsive col-lg-10">
+<div class="table-responsive col-lg-5">
+  @if (session()->has('success'))
+  <div class="alert alert-success alert-dismissible fade show" role="alert">
+    {{session('success')}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+  </div>
+  @endif
+</div>
+<div class="table-responsive col-lg-11">
     <a href="/dashboard/posts/create" class="btn btn-primary mb-3">Create New Posts</a>
     <table class="table table-striped table-sm">
       <thead>
