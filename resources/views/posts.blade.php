@@ -26,13 +26,13 @@
 <div class="card mb-3">
     @if ($posts[0]->image)
         <div style="max-height: 400px; overflow:hidden;">
-        <img src="{{ asset('storage/' . $posts[0]->image) }}" class="img-fluid" alt="{{ 
+        <img src="{{ asset('storage/' . $posts[0]->image) }}" class="img-fluid" alt="{{
         $posts[0]->category->name }}">
         </div>
         @else
         <img src="https://source.unsplash.com/1200x400?{{ $posts[0]->category->name }}" class="card-img-top" alt="{{ $posts[0]->category->name }}">
         @endif
-   
+
     <div class="card-body text-center">
       <h3 class="card-title"><a href="/post/{{ $posts[0]->slug }}"class="text-decoration-none text-dark">{{ $posts[0]->title }}</h3></a>
       <p><small class="text-muted"> By. <a href="/posts?author={{ $posts[0]->author->username }}" class="text-decoration-none">{{ $posts[0]->author->name }}</a> in <a href="/posts?category={{ $posts[0]->category->slug }}"class="text-decoration-none">{{ $posts[0]->category->name }}</a> {{ $posts[0]->created_at->diffForHumans ()}}</small></p>
@@ -49,11 +49,11 @@
                 <div class="card">
                     <div class="position-absolute px-3 py-2 text-white" style="background-color: rgba(0,0,0,0.7)"><a href="/posts?category={{ $p->category->slug }}" class="text-white text-decoration-none">{{ $p->category->name }}</a></div>
                     @if ($p->image)
-                    <img src="{{ asset('storage/' . $p->image) }}" class="img-fluid" alt="{{ 
+                    <img src="{{ asset('storage/' . $p->image) }}" class="img-fluid" alt="{{
                     $p->category->name }}">
                     @else
                     <img src="https://source.unsplash.com/500x400?{{ $p->category->name }}" class="card-img-top" alt="{{ $p->category->name }}">
-                    @endif  
+                    @endif
                     <div class="card-body">
                     <h5 class="card-title">{{ $p->title }}</h5>
                     <p><small class="text-muted"> By. <a href="/posts?author={{ $p->author->username }}" class="text-decoration-none">{{ $p->author->name }}</a> {{ $p->created_at->diffForHumans ()}}</small></p>
@@ -62,11 +62,11 @@
                     </div>
                 </div>
             </div>
-            @endforeach 
+            @endforeach
     </div>
 </div>
 @else
-<p class="text-center fs-4">No Post Found....</p> 
+<p class="text-center fs-4">No Post Found....</p>
 @endif
 
 <div class="d-flex justify-content-end">
