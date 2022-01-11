@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-warning  ">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"><img width="230px" src="{{ asset('utama/logo_iapi.gif') }}" ></a>
-        <a class="navbar-brand" href="#"><img width="130px" src="{{ asset('utama/ifac.png') }}" ></a>
+      <div class="container">
+        <a class="navbar-header" href="#"><img width="230px" src="{{ asset('utama/logo_iapi.gif') }}" ></a>
+        <a class="navbar-header" href="#"><img width="130px" src="{{ asset('utama/ifac.png') }}" ></a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
