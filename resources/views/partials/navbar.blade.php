@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-warning  ">
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-warning  ">
       <div class="container">
         <a class="navbar-header" href="#"><img width="230px" src="{{ asset('utama/logo_iapi.gif') }}" ></a>
         <a class="navbar-header" href="#"><img width="130px" src="{{ asset('utama/ifac.png') }}" ></a>
@@ -45,6 +45,5 @@
                                 @endauth
                               </ul>
                 </div>
-
         </div>
-  </nav>
+</nav>

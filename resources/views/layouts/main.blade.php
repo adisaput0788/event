@@ -13,14 +13,15 @@
 
      <!-- CSS Sendiri-->
      <link rel="stylesheet" href="/css/style.css">
-     <link rel="stylesheet" href="/css/footer.css">
+     <link rel="stylesheet" href="/css/footers.css">
+     
     <title>Institut Akuntan Publik Indonesia | {{ $title }}</title>
   </head>
   <body>
 
     @include('partials.navbar')
 
-      <div class="container">
+      <div class="container-fluid">
           @yield('container')
       </div>
 
